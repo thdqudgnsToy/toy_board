@@ -80,3 +80,10 @@ Spring Boot 2.X 부터는 Hikari가 Connection Pooling의 기본값입니다. �
 ![image](https://github.com/thdqudgnsToy/toy_board/assets/92148521/0861c1de-44fc-4f98-8207-a93c00169615)
 ### **localhost/board/2** (DELETE) - 글삭제
 ![image](https://github.com/thdqudgnsToy/toy_board/assets/92148521/c3e037f7-0a9a-468e-af41-acc528830aa7)
+
+
+---
+
+그 외 참조
+[Maven과 Gradle의 개념 및 비교](https://dev-coco.tistory.com/65)
+[JAR과 WAR의 차이는 무엇일까?](https://wonin.tistory.com/498)

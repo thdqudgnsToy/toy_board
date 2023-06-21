@@ -29,6 +29,7 @@ main메소드가 있는 어플리케이션 클래스를 실행하니
 
 ![image](https://github.com/thdqudgnsToy/toy_board/assets/92148521/4c376037-2a5a-4825-91d6-62f5baf4468a)
 WARN 경고를 보면, `No MyBatis mapper was found in ~` 이런 메세지가 나옵니다. MyBatis mapper 설정을 하지 않아서 발생하는 에러 같으므로 mapper를 설정해줍니다. mapper를 설정하기 전에, MySQL DB 계정을 만들어줍니다. 도움받은 [URL](https://clgnsdl94.tistory.com/49)입니다.   
+
 계정을 생성할 때 DBA 권한을 부여하고, 비밀번호를 8자 이상으로 설정해주어야 Java에서 DB로 SQL문을 돌리기 위해 접속할 때 추후 문제가 발생하지 않습니다. 저는 처음에 비밀번호를 0000으로 해서 그런지 게시글 삽입이나 목록 조회등 SQL쿼리를 날릴 때 계정 문제로 오류가 발생했습니다. 비밀번호를 바꿔주니 문제가 해결되었습니다.   
 
 계정을 만들었으면, 본격젹으로 Java Project와 DB를 `application.yml` 파일을 통해 연결시켜줍니다.   

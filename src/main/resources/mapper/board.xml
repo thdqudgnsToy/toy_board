@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.board.model.mapper.BoardMapper">
+
+    <resultMap id="boardMap" type="board">
+        <result column="board_no" property="boardNo" />
+        <result column="writer" property="writer" />
+        <result column="title" property="title" />
+        <result column="content" property="content" />
+        <result column="view_cnt" property="viewCnt" />
+        <result column="create_date" property="createDate" />
+        <result column="update_date" property="updateDate" />
+    </resultMap>
+
+    <!-- List<Board> selectBoardList() throws SQLException; -->
+    <select id="selectBoardList" resultMap="boardMap">
+        SELECT board_no, title, content, writer, view_cnt, create_date, update_date
+        FROM BOARD
+        ORDER BY board_no DESC
+    </select>
+
+    <!-- void insert(Board board) throws SQLException; -->
+    <insert id="insert" parameterType="board">
+        INSERT INTO BOARD (title, content, writer)
+        VALUES (#{title}, #{content}, #{writer})
+    </insert>
+
+
+    <!-- void update(Board board) throws SQLException; -->
+    <update id="update" parameterType="board">
+        UPDATE BOARD
+        SET title = #{title}
+            , content = #{content}
+            , update_date = now()
+        WHERE board_no = #{boardNo}
+    </update>
+
+    <!-- void delete(int boardNo) throws SQLException; -->
+    <delete id="delete" parameterType="int">
+        DELETE FROM BOARD
+        WHERE board_no = #{boardNo}
+    </delete>
+
+    <!-- void increaseReadCount(int boardNo) throws SQLException; -->
+    <update id="increaseReadCount" parameterType="int">
+        UPDATE BOARD
+        SET view_cnt = view_cnt + 1
+        WHERE board_no = #{boardNo}
+    </update>
+
+    <!-- Board selectByNo(int boardNo) throws SQLException; -->
+    <select id="selectByNo" parameterType="int" resultMap="boardMap">
+        SELECT board_no, title, content, writer, view_cnt, create_date, update_date
+        FROM BOARD
+        WHERE board_no = #{boardNo}
+    </select>
+
+</mapper>

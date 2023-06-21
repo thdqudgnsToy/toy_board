@@ -1,0 +1,18 @@
+logging:
+  level:
+    web: debug
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/toy_board?serverTimezone=UTC&useUniCode=yes&characterEncoding=UTF-8
+    username: byeonghun
+    password: byeonghun
+mybatis:
+  type-aliases-package: com.board.model.dto
+  mapper-locations: classpath:mapper/**/*.xml
+
+server:
+  port: 80
+  servlet:
+    context-path: /
